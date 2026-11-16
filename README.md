@@ -276,11 +276,28 @@ python -m creditbench.educational results/phase1-local
 
 我们自行完成数据审计和清洗、分层划分、场景构造、外层 Bootstrap、四种并行调度、随机种子管理、时间与内存监测、逐样本一致性检查、指标汇总和绘图；同时自行实现 NumPy 直方图 Gini 分裂、穷举参考、教学森林以及对应的 R/Rcpp 分裂内核。
 
-### 9.2 复用范围
+### 9.2 课程代码基础与本项目改写
 
-完整随机森林分别调用 scikit-learn 的 `RandomForestClassifier` 和 R 的 `ranger`。NumPy、pandas 和 SciPy 用于数值与数据处理，psutil 用于进程和内存监测，matplotlib 用于绘图，pytest 用于测试。我们不把这些第三方库的模型实现表述为自行编写。
+本项目的并行计算部分以课程资料 `rparallel-basics.md` 中的“Bootstrapping”“Random forest”和“并行产生随机数”示例为基础。
+课程示例使用 `makeCluster`、`foreach` 和 `doSNOW`，将相互独立的Bootstrap 或随机森林建树任务分配给多个 worker，并比较串行与并行运行时间。
 
-### 9.3 数据和参考资料
+在课程示例的基础上，我们将数据由鸢尾花数据替换为 UCI 信用卡客户违约数据，将多分类问题改为类别不平衡的二分类预测，并进一步增加外层 Bootstrap 重复训练。
+项目不再只比较一次串行和并行训练，而是在相同的 4 个 CPU 配额下比较串行、外层并行、内层并行和混合并行，同时记录核心时间、完整进程时间和峰值内存。
+
+为保证不同调度方式具有可比性，我们预先生成相同的 Bootstrap 行号和模型随机种子，并保存逐样本预测概率，检查不同调度下的结果是否一致。项目还进一步考察训练样本量n、外层 Bootstrap 次数 B 和树数 T 的单因素变化，并使用 scikit-learn 和 ranger两个随机森林引擎完成正式实验。
+
+课程资料来源：
+
+Ma, W.《数据科学中的计算机技能》，`rparallel-basics.md`，
+“Bootstrapping”“Random forest”和“并行产生随机数”部分。
+课程仓库：https://github.com/maweiruc/computer-skill
+参考版本：`a03dfd444ea8588589b385dbc96e5eb4aac1d4a6`。
+
+### 9.3 复用范围
+
+完整随机森林分别调用 scikit-learn 的 `RandomForestClassifier` 和 R 的 `ranger`。NumPy、pandas 和 SciPy 用于数值与数据处理，psutil 用于进程和内存监测，matplotlib 用于绘图，pytest 用于测试。
+
+### 9.4 数据和参考资料
 
 1. Yeh, I.-C. (2009). *Default of Credit Card Clients* [Dataset]. UCI Machine Learning Repository. <https://doi.org/10.24432/C55S3H>
 2. Breiman, L. (2001). Random Forests. *Machine Learning*, 45, 5–32. <https://doi.org/10.1023/A:1010933404324>
@@ -290,7 +307,7 @@ python -m creditbench.educational results/phase1-local
 
 ## 10. AI 使用说明
 
-本项目在课程允许范围内使用了 ChatGPT/Codex，主要用于讨论实验结构、检查代码问题、补充测试思路、解释报错、辅助整理 README 和报告文字。数据选择、实验问题、参数设置和结果解释由小组成员结合课程要求确定；所有正式数值均来自本仓库脚本在本机真实运行生成的结果文件，而不是由 AI 推测或编造。
+本项目使用了 ChatGPT/Codex，主要用于讨论实验结构、检查代码问题、补充测试思路、解释报错、辅助整理 README 和报告文字。数据选择、实验问题、参数设置和结果解释由小组成员结合课程要求确定；所有正式数值均来自本仓库脚本在本机真实运行生成的结果文件，而不是由 AI 推测或编造。
 
 我们通过单元测试、穷举参考实现、跨语言比较、不同调度下的逐样本预测一致性、`COMPLETE.json` 任务数、原始 CSV 与汇总表复算等方式核查 AI 辅助内容。小组成员对最终提交内容负责，并能够说明核心代码、实验设置和结果含义。
 
