@@ -4,7 +4,6 @@
 >
 > GitHub：<https://github.com/XiupingChen/final-2026001406-2026001407>
 >
-> 正式实验结果基准提交：`25f5f0e12b8a1ab664429a1f8272cd0fd8cccd6e`
 
 ## 1. 项目简介
 
