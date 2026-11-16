@@ -1,0 +1,43 @@
+{
+  "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+  "cpu": "arm",
+  "python": "3.13.9",
+  "logical_cpus": 10,
+  "physical_cores": 10,
+  "ram_gib": 16.0,
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "psutil": "7.2.2",
+    "matplotlib": "3.11.2"
+  },
+  "started": "2026-11-15T15:17:43.243514+00:00",
+  "memory_scope": "Whole worker lifetime; POSIX isolated process-group sum captures reparented PSOCK workers; Windows uses process-tree sum; 20ms sample target; shared pages may double count.",
+  "timing_scope": "core: after data load and 3-tree warmup, includes bootstrap materialization, fit, validation/test prediction and task IPC; excludes metrics, disk output and pool teardown.",
+  "cpu_scope": "CPU slot budget only; no affinity, cores can be heterogeneous/SMT.",
+  "R_sessionInfo": "R version 4.6.0 (2026-04-24)\nPlatform: aarch64-apple-darwin23\nRunning under: macOS Tahoe 26.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] jsonlite_2.0.0 ranger_0.18.0 \n\nloaded via a namespace (and not attached):\n[1] compiler_4.6.0 Matrix_1.7-5   tools_4.6.0    Rcpp_1.1.2     grid_4.6.0    \n[6] lattice_0.22-9\n",
+  "source_sha256": {
+    "creditbench/worker.py": "4c6e95cc2df00f7225bf8735aabce94a9e62cc4faf18c688366306e2b8a95fb1",
+    "creditbench/metrics.py": "47c19e4c46cd33a9d2db9e20992e56319448a4562f3a0c0b97259fea740bcda3",
+    "creditbench/run.py": "7273e68a49337085c3b9b56568efc928499a00fa27f7b15e10fdc5f789aec573",
+    "creditbench/clean.py": "a9e335a2885ce9add147eff80e53fd5dfcbf014dc31f7af087be9f74aa717db7",
+    "creditbench/__init__.py": "af1b138493e0eea6523c3c6e8ad573227da17ba903232250d368c016779467e0",
+    "creditbench/summarize.py": "9dd551f5358b4b6246073e2323828ad0a59fcda2d28d98e6c795a9638d8bff48",
+    "creditbench/common.py": "e4da2bb9dcced9174bd6e6d364b6c1b9306002d18c3cc47700e17c25cde145d4",
+    "creditbench/kernels.py": "aeb1385153920e31ef5cf9c351ed26c6e009cba8ec29b5efecce38a3c3c70d6e",
+    "creditbench/educational.py": "f484819609ff66c13ab3d72d1962cd3ed44032d24768d67184fceed33b6242ac",
+    "creditbench/data.py": "5203597818c3ded832b50228c80715cb809265384016cf6eaf17471782a7c980",
+    "creditbench/benchmark_kernel.py": "3f5bdc3d3923519ef09d0f9dd1a572c81524b0faeb95f20032a3de28689fa0ee",
+    "R/kernels.R": "d97ddeb8d208db2c5db4bb4d25381ce0d31b9dd8753d095701069f2ff18a58bd",
+    "R/compile.R": "bdcc89e1f23ebc509b1cc9ae2cbca9f099ca3110025975f4abd45e278750411f",
+    "R/worker.R": "73cc103e9371badbc70b752607a133d5cf34b96f7dc0cddf1b880602c90a65ce",
+    "R/benchmark_kernel.R": "a252a946d80b4730898c9de8c13d2a222d4ae1eb2cd2f88126f1dfad07797f65",
+    "R/test_kernels.R": "6090f30c4471a69f5335862fd326721afcf0c90a4dc1e2efe3759abda54150b6",
+    "src/histogram_split.cpp": "bd25b97c65e7fbc340e22cae651e5937590fdcff326b4ddeb3dc7b7b32458750"
+  },
+  "postprocessing_sha256": {
+    "creditbench/summarize.py": "819863a7093897f3c252678e2e645d47f1eb6a192e90afd6dfb3e9b44a597d36"
+  }
+}

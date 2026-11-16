@@ -1,0 +1,13 @@
+scenario,engine,mode,repeat,max_absolute_error,passed
+n_2000,sklearn,serial,0,0.0,True
+n_2000,ranger,serial,0,0.0,True
+base,sklearn,serial,0,0.0,True
+base,ranger,serial,0,0.0,True
+n_12000,sklearn,serial,0,0.0,True
+n_12000,ranger,serial,0,0.0,True
+rate_010,sklearn,serial,0,0.0,True
+rate_010,ranger,serial,0,0.0,True
+rate_030,sklearn,serial,0,0.0,True
+rate_030,ranger,serial,0,0.0,True
+rate_050,sklearn,serial,0,0.0,True
+rate_050,ranger,serial,0,0.0,True

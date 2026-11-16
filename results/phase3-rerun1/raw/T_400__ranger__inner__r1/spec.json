@@ -1,0 +1,13 @@
+{
+  "prepared": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared",
+  "scenario_dir": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/T_400",
+  "trees": 400,
+  "bootstrap": 20,
+  "max_depth": 16,
+  "min_leaf": 5,
+  "mtry": 5,
+  "outer": 1,
+  "inner": 4,
+  "prediction_path": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/raw/T_400__ranger__inner__r1/predictions.csv",
+  "result_path": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/raw/T_400__ranger__inner__r1/timing.json"
+}

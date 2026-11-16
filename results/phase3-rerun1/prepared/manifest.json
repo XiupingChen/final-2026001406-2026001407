@@ -1,0 +1,166 @@
+{
+  "source": {
+    "source": "cleaned.csv",
+    "cleaned_sha256": "9bc4c27d65e94d9b8e913efd978987cadf184d2922c0bb245a7f6fbc012e3daf",
+    "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI: 10.24432/C55S3H"
+  },
+  "n": 30000,
+  "p": 29,
+  "features": [
+    "LIMIT_BAL",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "SEX_1",
+    "SEX_2",
+    "EDUCATION_1",
+    "EDUCATION_2",
+    "EDUCATION_3",
+    "EDUCATION_4",
+    "MARRIAGE_1",
+    "MARRIAGE_2",
+    "MARRIAGE_3"
+  ],
+  "split_sizes": {
+    "train": 18000,
+    "validation": 6000,
+    "test": 6000
+  },
+  "split_default_rates": {
+    "train": 0.2212222222222222,
+    "validation": 0.22116666666666668,
+    "test": 0.22116666666666668
+  },
+  "preprocessing": {
+    "numeric_medians": {
+      "LIMIT_BAL": 140000.0,
+      "AGE": 34.0,
+      "PAY_0": 0.0,
+      "PAY_2": 0.0,
+      "PAY_3": 0.0,
+      "PAY_4": 0.0,
+      "PAY_5": 0.0,
+      "PAY_6": 0.0,
+      "BILL_AMT1": 22616.0,
+      "BILL_AMT2": 21800.0,
+      "BILL_AMT3": 20475.5,
+      "BILL_AMT4": 19310.5,
+      "BILL_AMT5": 18312.5,
+      "BILL_AMT6": 17455.5,
+      "PAY_AMT1": 2167.0,
+      "PAY_AMT2": 2022.0,
+      "PAY_AMT3": 1864.0,
+      "PAY_AMT4": 1500.0,
+      "PAY_AMT5": 1500.0,
+      "PAY_AMT6": 1500.0
+    },
+    "category_levels": {
+      "SEX": [
+        1,
+        2
+      ],
+      "EDUCATION": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "MARRIAGE": [
+        1,
+        2,
+        3
+      ]
+    },
+    "unknown_category": "all-zero encoding",
+    "fit_partition": "training only"
+  },
+  "scenarios": [
+    {
+      "name": "base",
+      "n": 6000,
+      "rate": null,
+      "parallel": true,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.22116666666666668,
+      "directory": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/base"
+    },
+    {
+      "name": "n_2000",
+      "n": 2000,
+      "rate": null,
+      "parallel": true,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.221,
+      "directory": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/n_2000"
+    },
+    {
+      "name": "n_12000",
+      "n": 12000,
+      "rate": null,
+      "parallel": true,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.22125,
+      "directory": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/n_12000"
+    },
+    {
+      "name": "B_40",
+      "n": 6000,
+      "rate": null,
+      "parallel": true,
+      "bootstrap": 40,
+      "trees": 200,
+      "observed_rate": 0.22116666666666668,
+      "directory": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/B_40"
+    },
+    {
+      "name": "T_400",
+      "n": 6000,
+      "rate": null,
+      "parallel": true,
+      "trees": 400,
+      "bootstrap": 20,
+      "observed_rate": 0.22116666666666668,
+      "directory": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase3-rerun1/prepared/T_400"
+    }
+  ],
+  "sha256": {
+    "splits.csv": "82f4ec14d62fb3f57823b6f929a4d0334017b3777eb7cf744149b545a85b7f06",
+    "validation.csv": "ed3dd7157d8ea968916b99488235918760bf63061366572fb6677cee6e604c27",
+    "test.csv": "fd7d6371a82ed101938810d2ed429edee1202e3297b841c8e5de719847bbf9a6",
+    "dataset.csv": "f60fab9786213e03ec72ba9bf75b3ef3188bd3da960f58d131863b843ab9b6ce",
+    "T_400/seeds.csv": "d1015a022696fd3fa2c539fd390ba6bad5c327fb28c1c7763f769c042f88ac67",
+    "T_400/bootstrap.csv": "f7045af2b61a6863d243945507c8280a957418ef1dc2100a3712869be839ec5f",
+    "T_400/train.csv": "6eceeee974ec876eb7efd6e6ca5684af5aba6ceac0addc7594722afbc9d88566",
+    "n_2000/seeds.csv": "3069e24b4419784c590d4c41b51ec7b7d667f878d6ea436127ac38b528543b28",
+    "n_2000/bootstrap.csv": "e4d3366dc7ebca5eb4e33ad2d9e47403b132fe268d0f482863914b04d708b434",
+    "n_2000/train.csv": "0c77da433d6bc7c40c25e6e09736541d729b20a792aafdabc9dc4e84adde408d",
+    "n_12000/seeds.csv": "53615e2c55e6f6878cf83582f4b0ff1f50d76b4e7f304bbd2c21025c8ef4a21f",
+    "n_12000/bootstrap.csv": "e944f9e2c77a451e9559dd8fd2306ff4f6325476bd98ddbfaa8c0e28537e459d",
+    "n_12000/train.csv": "f491cd4c46b6b3b2a1d7e8603b1c9e1400b5076fd303e015af9503a04816630f",
+    "base/seeds.csv": "d1015a022696fd3fa2c539fd390ba6bad5c327fb28c1c7763f769c042f88ac67",
+    "base/bootstrap.csv": "f7045af2b61a6863d243945507c8280a957418ef1dc2100a3712869be839ec5f",
+    "base/train.csv": "6eceeee974ec876eb7efd6e6ca5684af5aba6ceac0addc7594722afbc9d88566",
+    "B_40/seeds.csv": "cd574b63b7f8d52aea9ef43f259642aa344234b8913b4f2f5fc0fb502876e3f1",
+    "B_40/bootstrap.csv": "4ae59a7a7552f3b252d7e49b46f0d956b0b709bcf5b446298f1bf395accf2823",
+    "B_40/train.csv": "6eceeee974ec876eb7efd6e6ca5684af5aba6ceac0addc7594722afbc9d88566"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "x": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/x_1000.csv",
+      "y": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/y_1000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.046812047619047614
+    },
+    {
+      "x": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/x_6000.csv",
+      "y": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/y_6000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.04732340149307307
+    },
+    {
+      "x": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/x_18000.csv",
+      "y": "/Users/a31858/Desktop/Statistics_Computing/期末大作业/credit-default-project/results/phase2-rerun1/kernel/y_18000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.05103478037326192
+    }
+  ],
+  "bins": 32,
+  "min_leaf": 5,
+  "repeats": 10
+}
