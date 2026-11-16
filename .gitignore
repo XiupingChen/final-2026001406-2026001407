@@ -1,0 +1,13 @@
+.venv/
+.Rlib/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.dll
+*.o
+*.so
+build/
+results/
+data/cleaned/
+data/prepared/
+.DS_Store

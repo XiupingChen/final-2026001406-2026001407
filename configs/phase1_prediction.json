@@ -1,0 +1,66 @@
+{
+  "seed": 20261111,
+  "data": "cleaned",
+  "test_fraction": 0.2,
+  "validation_fraction": 0.2,
+  "cores": 4,
+  "hybrid_outer": 2,
+  "engines": [
+    "sklearn",
+    "ranger"
+  ],
+  "model": {
+    "trees": 200,
+    "max_depth": 16,
+    "min_leaf": 5
+  },
+  "bootstrap": 20,
+  "kernel": {
+    "rows": [
+      1000,
+      6000,
+      18000
+    ],
+    "bins": 32,
+    "repeats": 10
+  },
+  "timing_repeats": 1,
+  "scenarios": [
+    {
+      "name": "n_2000",
+      "n": 2000,
+      "rate": null,
+      "parallel": false
+    },
+    {
+      "name": "base",
+      "n": 6000,
+      "rate": null,
+      "parallel": false
+    },
+    {
+      "name": "n_12000",
+      "n": 12000,
+      "rate": null,
+      "parallel": false
+    },
+    {
+      "name": "rate_010",
+      "n": 6000,
+      "rate": 0.1,
+      "parallel": false
+    },
+    {
+      "name": "rate_030",
+      "n": 6000,
+      "rate": 0.3,
+      "parallel": false
+    },
+    {
+      "name": "rate_050",
+      "n": 6000,
+      "rate": 0.5,
+      "parallel": false
+    }
+  ]
+}

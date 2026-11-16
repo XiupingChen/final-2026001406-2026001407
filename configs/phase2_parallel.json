@@ -1,0 +1,36 @@
+{
+  "seed": 20261111,
+  "data": "cleaned",
+  "test_fraction": 0.2,
+  "validation_fraction": 0.2,
+  "cores": 4,
+  "hybrid_outer": 2,
+  "engines": [
+    "sklearn",
+    "ranger"
+  ],
+  "model": {
+    "trees": 200,
+    "max_depth": 16,
+    "min_leaf": 5
+  },
+  "bootstrap": 20,
+  "kernel": {
+    "rows": [
+      1000,
+      6000,
+      18000
+    ],
+    "bins": 32,
+    "repeats": 10
+  },
+  "timing_repeats": 5,
+  "scenarios": [
+    {
+      "name": "base",
+      "n": 6000,
+      "rate": null,
+      "parallel": true
+    }
+  ]
+}
