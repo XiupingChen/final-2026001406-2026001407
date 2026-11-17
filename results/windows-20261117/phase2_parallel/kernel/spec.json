@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "x": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\x_1000.csv",
+      "y": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\y_1000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.046812047619047614
+    },
+    {
+      "x": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\x_6000.csv",
+      "y": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\y_6000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.04732340149307307
+    },
+    {
+      "x": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\x_18000.csv",
+      "y": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\kernel\\y_18000.csv",
+      "feature": 2,
+      "threshold": 3,
+      "gain": 0.05103478037326192
+    }
+  ],
+  "bins": 32,
+  "min_leaf": 5,
+  "repeats": 10
+}

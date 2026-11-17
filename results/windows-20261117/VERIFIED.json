@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "stages": [
+    {
+      "stage": "smoke",
+      "jobs": 8,
+      "recomputed_max_schedule_error": 3.3306690738754696e-16,
+      "prepared_hashes_verified": 7
+    },
+    {
+      "stage": "phase1_prediction",
+      "jobs": 12,
+      "recomputed_max_schedule_error": 0.0,
+      "prepared_hashes_verified": 22
+    },
+    {
+      "stage": "phase2_parallel",
+      "jobs": 40,
+      "recomputed_max_schedule_error": 3.3306690738754696e-16,
+      "prepared_hashes_verified": 7
+    },
+    {
+      "stage": "phase3_scaling",
+      "jobs": 120,
+      "recomputed_max_schedule_error": 3.3306690738754696e-16,
+      "prepared_hashes_verified": 19
+    }
+  ],
+  "tests_passed": 21,
+  "tests_skipped": 1,
+  "supplement_model_fits": 12,
+  "bootstrap_prefix_preserved": true,
+  "grouped_split_overlap": 0,
+  "source_hashes_verified": true
+}

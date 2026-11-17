@@ -1,0 +1,30 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13700H",
+  "python": "3.14.8",
+  "logical_cpus": 20,
+  "physical_cores": 14,
+  "ram_gib": 31.73033905029297,
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "psutil": "7.2.2",
+    "matplotlib": "3.11.2"
+  },
+  "source_sha256": {
+    "creditbench\\benchmark_kernel.py": "3f5bdc3d3923519ef09d0f9dd1a572c81524b0faeb95f20032a3de28689fa0ee",
+    "creditbench\\clean.py": "49c95295bb9dd2677d6cb8f4f0bac8c6dea85747618809a3190eb81c1144fbe8",
+    "creditbench\\common.py": "e4da2bb9dcced9174bd6e6d364b6c1b9306002d18c3cc47700e17c25cde145d4",
+    "creditbench\\data.py": "4c5d866292cd275da2d2e6f1522cbbe39a8d549ffed38b77cf74b8f63348d1bc",
+    "creditbench\\educational.py": "f484819609ff66c13ab3d72d1962cd3ed44032d24768d67184fceed33b6242ac",
+    "creditbench\\kernels.py": "aeb1385153920e31ef5cf9c351ed26c6e009cba8ec29b5efecce38a3c3c70d6e",
+    "creditbench\\metrics.py": "47c19e4c46cd33a9d2db9e20992e56319448a4562f3a0c0b97259fea740bcda3",
+    "creditbench\\run.py": "eb3576a767906c4c1fe2ca6599b4b2d13bdd4e300f8a4e3c4511ff11330aecec",
+    "creditbench\\sensitivity.py": "ee9ba651ddbb99b06c853bdbda0786ac2b6f6043d239cfa1e46cd15953a6b9b3",
+    "creditbench\\summarize.py": "3c2b01661613921f183fb06d7d96c90a37c50d1d328c5bedd887a8eaad47c2e6",
+    "creditbench\\worker.py": "4c6e95cc2df00f7225bf8735aabce94a9e62cc4faf18c688366306e2b8a95fb1",
+    "creditbench\\__init__.py": "af1b138493e0eea6523c3c6e8ad573227da17ba903232250d368c016779467e0"
+  }
+}

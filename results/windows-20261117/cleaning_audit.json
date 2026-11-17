@@ -1,0 +1,76 @@
+{
+  "input_name": "default_of_credit_card_clients.xls",
+  "source_sha256": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+  "cleaned_sha256": "a970e2cb5113ada8dd37aad2c1756b462cffa64a42a7223ebc71f21be39a856b",
+  "rows_before": 30000,
+  "rows_after": 30000,
+  "predictors_before": 23,
+  "predictors_after": 23,
+  "target_counts": {
+    "0": 23364,
+    "1": 6636
+  },
+  "missing_values": 0,
+  "duplicate_ids": 0,
+  "duplicate_raw_rows_excluding_id": 35,
+  "duplicate_cleaned_rows": 35,
+  "duplicate_cleaned_predictors": 56,
+  "education_before": {
+    "0": 14,
+    "1": 10585,
+    "2": 14030,
+    "3": 4917,
+    "4": 123,
+    "5": 280,
+    "6": 51
+  },
+  "education_after": {
+    "1": 10585,
+    "2": 14030,
+    "3": 4917,
+    "4": 468
+  },
+  "marriage_before": {
+    "0": 54,
+    "1": 13659,
+    "2": 15964,
+    "3": 323
+  },
+  "marriage_after": {
+    "1": 13659,
+    "2": 15964,
+    "3": 377
+  },
+  "recoded_education_rows": 345,
+  "recoded_marriage_rows": 54,
+  "negative_bill_counts": {
+    "BILL_AMT1": 590,
+    "BILL_AMT2": 669,
+    "BILL_AMT3": 655,
+    "BILL_AMT4": 675,
+    "BILL_AMT5": 655,
+    "BILL_AMT6": 688
+  },
+  "negative_repayment_status_counts": {
+    "PAY_0": 8445,
+    "PAY_2": 9832,
+    "PAY_3": 10023,
+    "PAY_4": 10035,
+    "PAY_5": 10085,
+    "PAY_6": 10635,
+    "PAY_AMT1": 0,
+    "PAY_AMT2": 0,
+    "PAY_AMT3": 0,
+    "PAY_AMT4": 0,
+    "PAY_AMT5": 0,
+    "PAY_AMT6": 0
+  },
+  "decisions": [
+    "Drop ID from modeling; retain row_mapping.csv for traceability.",
+    "EDUCATION 0/5/6 -> 4 (other); MARRIAGE 0 -> 3 (other).",
+    "Keep negative PAY_* statuses and negative BILL_AMT* values.",
+    "No rows removed, no missing-value imputation needed for supplied XLS.",
+    "Repeated predictor profiles may be distinct customers; retained and audited, with grouped-split sensitivity.",
+    "No encoding or fitting on validation/test; training-only encoding occurs in prepare."
+  ]
+}

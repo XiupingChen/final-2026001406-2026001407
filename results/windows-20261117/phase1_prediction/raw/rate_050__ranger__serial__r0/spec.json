@@ -1,0 +1,13 @@
+{
+  "prepared": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared",
+  "scenario_dir": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\rate_050",
+  "trees": 200,
+  "bootstrap": 20,
+  "max_depth": 16,
+  "min_leaf": 5,
+  "mtry": 5,
+  "outer": 1,
+  "inner": 1,
+  "prediction_path": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\raw\\rate_050__ranger__serial__r0\\predictions.csv",
+  "result_path": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\raw\\rate_050__ranger__serial__r0\\timing.json"
+}

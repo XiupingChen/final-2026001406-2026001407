@@ -1,0 +1,8 @@
+[1/8] base__sklearn__outer__r0
+[2/8] base__ranger__inner__r0
+[3/8] base__sklearn__hybrid__r0
+[4/8] base__ranger__hybrid__r0
+[5/8] base__sklearn__inner__r0
+[6/8] base__sklearn__serial__r0
+[7/8] base__ranger__outer__r0
+[8/8] base__ranger__serial__r0

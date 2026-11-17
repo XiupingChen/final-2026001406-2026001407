@@ -1,0 +1,189 @@
+{
+  "source": {
+    "source": "cleaned.csv",
+    "cleaned_sha256": "a970e2cb5113ada8dd37aad2c1756b462cffa64a42a7223ebc71f21be39a856b",
+    "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI: 10.24432/C55S3H"
+  },
+  "n": 30000,
+  "p": 29,
+  "features": [
+    "LIMIT_BAL",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "SEX_1",
+    "SEX_2",
+    "EDUCATION_1",
+    "EDUCATION_2",
+    "EDUCATION_3",
+    "EDUCATION_4",
+    "MARRIAGE_1",
+    "MARRIAGE_2",
+    "MARRIAGE_3"
+  ],
+  "random_streams": {
+    "bootstrap": 20261114,
+    "model_seeds": 20261115
+  },
+  "duplicate_audit": {
+    "group_definition": "identical cleaned predictors, excluding ID and target",
+    "groups_crossing_partitions": 25,
+    "test_rows_matching_training_pool": 8,
+    "decision": "Preserved for comparability; grouped-split sensitivity is run separately."
+  },
+  "split_sizes": {
+    "train": 18000,
+    "validation": 6000,
+    "test": 6000
+  },
+  "split_default_rates": {
+    "train": 0.2212222222222222,
+    "validation": 0.22116666666666668,
+    "test": 0.22116666666666668
+  },
+  "preprocessing": {
+    "numeric_medians": {
+      "LIMIT_BAL": 140000.0,
+      "AGE": 34.0,
+      "PAY_0": 0.0,
+      "PAY_2": 0.0,
+      "PAY_3": 0.0,
+      "PAY_4": 0.0,
+      "PAY_5": 0.0,
+      "PAY_6": 0.0,
+      "BILL_AMT1": 22616.0,
+      "BILL_AMT2": 21800.0,
+      "BILL_AMT3": 20475.5,
+      "BILL_AMT4": 19310.5,
+      "BILL_AMT5": 18312.5,
+      "BILL_AMT6": 17455.5,
+      "PAY_AMT1": 2167.0,
+      "PAY_AMT2": 2022.0,
+      "PAY_AMT3": 1864.0,
+      "PAY_AMT4": 1500.0,
+      "PAY_AMT5": 1500.0,
+      "PAY_AMT6": 1500.0
+    },
+    "category_levels": {
+      "SEX": [
+        1,
+        2
+      ],
+      "EDUCATION": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "MARRIAGE": [
+        1,
+        2,
+        3
+      ]
+    },
+    "unknown_category": "all-zero encoding",
+    "fit_partition": "training only"
+  },
+  "scenarios": [
+    {
+      "name": "n_2000",
+      "n": 2000,
+      "rate": null,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.221,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\n_2000"
+    },
+    {
+      "name": "base",
+      "n": 6000,
+      "rate": null,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.22116666666666668,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\base"
+    },
+    {
+      "name": "n_12000",
+      "n": 12000,
+      "rate": null,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.22125,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\n_12000"
+    },
+    {
+      "name": "rate_010",
+      "n": 6000,
+      "rate": 0.1,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.1,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\rate_010"
+    },
+    {
+      "name": "rate_030",
+      "n": 6000,
+      "rate": 0.3,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.3,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\rate_030"
+    },
+    {
+      "name": "rate_050",
+      "n": 6000,
+      "rate": 0.5,
+      "parallel": false,
+      "bootstrap": 20,
+      "trees": 200,
+      "observed_rate": 0.5,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase1_prediction\\prepared\\rate_050"
+    }
+  ],
+  "sha256": {
+    "dataset.csv": "a8f6c55956bad554278b3c0ad7c33a3f48f36b219619c453a72439e0bb9436a3",
+    "splits.csv": "07b1cdcff485015107c3d7a677e2ec4550ee06e54d6420f16928eab70f901882",
+    "test.csv": "b1cf772a60c33374cd66ff230a92bbf2e959a76e0d256b79db330d16ecbbbe08",
+    "validation.csv": "e3efe679a686dc85882fa31988c64f8294e24d5bb91402e692aa4f0b57591429",
+    "base\\bootstrap.csv": "f18781e2b0de0cd7a8aedcf8ffc7961ee1e9e6ef3f0de087c93cb4b1c38e177f",
+    "base\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "base\\train.csv": "51fad92f611724d8b54ba6b25e1f834893b47a4669814a4238c433fc4edb85d4",
+    "n_12000\\bootstrap.csv": "165aba0856dc8ea7a18dec482d5dad7aa0b2b67d1b184f85443118a2bfc4331e",
+    "n_12000\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "n_12000\\train.csv": "8f8a8c2e302a8d1670d2d5936dff64ca91a56c7804c3eb34fee413e65ff026c6",
+    "n_2000\\bootstrap.csv": "05fc41500dbfc658b208b9a1d0134eb5474aa99b7567bde7ef311b1a44cd44c8",
+    "n_2000\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "n_2000\\train.csv": "bdb16aec553d3a8bce998691ae4490e83b9c498303c23b708bc324e687b86358",
+    "rate_010\\bootstrap.csv": "f18781e2b0de0cd7a8aedcf8ffc7961ee1e9e6ef3f0de087c93cb4b1c38e177f",
+    "rate_010\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "rate_010\\train.csv": "824510f7fc5fe21b06a9455c0c13b29bb92b39d9a8d80a15839c8976885dba22",
+    "rate_030\\bootstrap.csv": "f18781e2b0de0cd7a8aedcf8ffc7961ee1e9e6ef3f0de087c93cb4b1c38e177f",
+    "rate_030\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "rate_030\\train.csv": "550312d6c07e37cf30e5ce412b9bccd2c5e6db80f0ca15cfb6d9adf077e7052b",
+    "rate_050\\bootstrap.csv": "f18781e2b0de0cd7a8aedcf8ffc7961ee1e9e6ef3f0de087c93cb4b1c38e177f",
+    "rate_050\\seeds.csv": "995b201d77767ba89fedbb4227e9389bb9ea6b937811057a96e8967d35627072",
+    "rate_050\\train.csv": "10ecc7a6539e436d0ef77fb4df7e1cc3d569d9a51e8a96cbf7fb5502ef0ea1c9"
+  }
+}

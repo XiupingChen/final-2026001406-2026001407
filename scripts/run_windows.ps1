@@ -29,11 +29,12 @@ if (!(Test-Path 'data/cleaned/cleaned.csv')) {
 Copy-Item data/cleaned/audit.json "$Output/cleaning_audit.json"
 Invoke-Python -m pytest -q -ra --junitxml "$Output/tests.xml"
 foreach ($stage in @('smoke', 'phase1_prediction', 'phase2_parallel', 'phase3_scaling')) {
-    $prepared = "data/prepared/windows-$stage"
+    $prepared = "data/prepared/$(Split-Path $Output -Leaf)-$stage"
     Invoke-Python -m creditbench.data --config "configs/$stage.json" --cleaned data/cleaned/cleaned.csv --output $prepared
     Invoke-Python -m creditbench.run --config "configs/$stage.json" --prepared $prepared --engines sklearn ranger --output "$Output/$stage"
 }
 Invoke-Python -m creditbench.benchmark_kernel "$Output/phase2_parallel"
 Invoke-Python -m creditbench.educational "$Output/phase1_prediction"
 Invoke-Python -m creditbench.sensitivity --cleaned data/cleaned/cleaned.csv --output "$Output/sensitivity" --phase1 "$Output/phase1_prediction"
+Invoke-Python scripts/verify_windows.py $Output
 Write-Output "Windows experiments completed: $Output"

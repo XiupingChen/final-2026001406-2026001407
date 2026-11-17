@@ -1,0 +1,13 @@
+{
+  "prepared": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\prepared",
+  "scenario_dir": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\prepared\\base",
+  "trees": 200,
+  "bootstrap": 20,
+  "max_depth": 16,
+  "min_leaf": 5,
+  "mtry": 5,
+  "outer": 1,
+  "inner": 1,
+  "prediction_path": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\raw\\base__ranger__serial__r1\\predictions.csv",
+  "result_path": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\phase2_parallel\\raw\\base__ranger__serial__r1\\timing.json"
+}

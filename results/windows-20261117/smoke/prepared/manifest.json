@@ -1,0 +1,124 @@
+{
+  "source": {
+    "source": "cleaned.csv",
+    "cleaned_sha256": "a970e2cb5113ada8dd37aad2c1756b462cffa64a42a7223ebc71f21be39a856b",
+    "citation": "Yeh, I. (2009). Default of Credit Card Clients. UCI. DOI: 10.24432/C55S3H"
+  },
+  "n": 30000,
+  "p": 29,
+  "features": [
+    "LIMIT_BAL",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "SEX_1",
+    "SEX_2",
+    "EDUCATION_1",
+    "EDUCATION_2",
+    "EDUCATION_3",
+    "EDUCATION_4",
+    "MARRIAGE_1",
+    "MARRIAGE_2",
+    "MARRIAGE_3"
+  ],
+  "random_streams": {
+    "bootstrap": 20261114,
+    "model_seeds": 20261115
+  },
+  "duplicate_audit": {
+    "group_definition": "identical cleaned predictors, excluding ID and target",
+    "groups_crossing_partitions": 25,
+    "test_rows_matching_training_pool": 8,
+    "decision": "Preserved for comparability; grouped-split sensitivity is run separately."
+  },
+  "split_sizes": {
+    "train": 18000,
+    "validation": 6000,
+    "test": 6000
+  },
+  "split_default_rates": {
+    "train": 0.2212222222222222,
+    "validation": 0.22116666666666668,
+    "test": 0.22116666666666668
+  },
+  "preprocessing": {
+    "numeric_medians": {
+      "LIMIT_BAL": 140000.0,
+      "AGE": 34.0,
+      "PAY_0": 0.0,
+      "PAY_2": 0.0,
+      "PAY_3": 0.0,
+      "PAY_4": 0.0,
+      "PAY_5": 0.0,
+      "PAY_6": 0.0,
+      "BILL_AMT1": 22616.0,
+      "BILL_AMT2": 21800.0,
+      "BILL_AMT3": 20475.5,
+      "BILL_AMT4": 19310.5,
+      "BILL_AMT5": 18312.5,
+      "BILL_AMT6": 17455.5,
+      "PAY_AMT1": 2167.0,
+      "PAY_AMT2": 2022.0,
+      "PAY_AMT3": 1864.0,
+      "PAY_AMT4": 1500.0,
+      "PAY_AMT5": 1500.0,
+      "PAY_AMT6": 1500.0
+    },
+    "category_levels": {
+      "SEX": [
+        1,
+        2
+      ],
+      "EDUCATION": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "MARRIAGE": [
+        1,
+        2,
+        3
+      ]
+    },
+    "unknown_category": "all-zero encoding",
+    "fit_partition": "training only"
+  },
+  "scenarios": [
+    {
+      "name": "base",
+      "n": 400,
+      "rate": null,
+      "parallel": true,
+      "bootstrap": 4,
+      "trees": 12,
+      "observed_rate": 0.22,
+      "directory": "C:\\Users\\HeYunqi\\Documents\\Codex\\2026-11-17\\https-github-com-xiupingchen-final-2026001406\\work\\windows-repo\\results\\windows-20261117\\smoke\\prepared\\base"
+    }
+  ],
+  "sha256": {
+    "dataset.csv": "a8f6c55956bad554278b3c0ad7c33a3f48f36b219619c453a72439e0bb9436a3",
+    "splits.csv": "07b1cdcff485015107c3d7a677e2ec4550ee06e54d6420f16928eab70f901882",
+    "test.csv": "b1cf772a60c33374cd66ff230a92bbf2e959a76e0d256b79db330d16ecbbbe08",
+    "validation.csv": "e3efe679a686dc85882fa31988c64f8294e24d5bb91402e692aa4f0b57591429",
+    "base\\bootstrap.csv": "c2efc67c11d9138dddb0ce97a052c14cd98ea08ea528631a3ffbd119ee881949",
+    "base\\seeds.csv": "72bddf7875f5ed13b720c643637aee1244e478d0c7f7b069e994f17153f04170",
+    "base\\train.csv": "d39a06b9fe055241df324efbaae615070b9100b481a1f25716099060ff380d42"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "purpose": "Show original histogram kernel inside recursive CART and a bootstrap forest; compare bin budgets and task quality.",
+  "timing": "Exploratory fit/predict observations, no separate warmup; not included in formal performance rankings.",
+  "comparison": "Same training rows, tree count/depth/leaf settings; internal RNG, split candidates and implementations differ.",
+  "limitation": "Quantile histogram is approximate CART. Exact sklearn baseline is task-level only; not a controlled language benchmark."
+}

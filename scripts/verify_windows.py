@@ -22,7 +22,7 @@ def markdown_table(frame):
     headers = list(frame.columns)
     lines = ['| ' + ' | '.join(headers) + ' |', '| ' + ' | '.join(['---'] * len(headers)) + ' |']
     for row in frame.itertuples(index=False, name=None):
-        lines.append('| ' + ' | '.join(f'{x:.4f}' if isinstance(x, float) else str(x) for x in row) + ' |')
+        lines.append('| ' + ' | '.join((f'{x:.3e}' if 0 < abs(x) < 1e-4 else f'{x:.4f}') if isinstance(x, float) else str(x) for x in row) + ' |')
     return '\n'.join(lines)
 
 
@@ -30,6 +30,11 @@ def verify(directory):
     root = Path(directory).resolve()
     checks = []
     expected = {'smoke': 8, 'phase1_prediction': 12, 'phase2_parallel': 40, 'phase3_scaling': 120}
+    repo = Path(__file__).resolve().parents[1]
+    for stage in [*expected, 'sensitivity']:
+        environment = json.loads((root / stage / 'environment.json').read_text(encoding='utf-8'))
+        for rel, hash_value in environment['source_sha256'].items():
+            assert digest(repo / rel.replace('\\', '/')) == hash_value, ('source', stage, rel)
     for stage, count in expected.items():
         path = root / stage
         complete = json.loads((path / 'COMPLETE.json').read_text(encoding='utf-8'))
@@ -76,13 +81,13 @@ def verify(directory):
     skipped = len(xml.findall('.//skipped'))
     result = {'status': 'passed', 'stages': checks, 'tests_passed': len(cases)-skipped,
               'tests_skipped': skipped, 'supplement_model_fits': len(sensitivity),
-              'bootstrap_prefix_preserved': True, 'grouped_split_overlap': 0}
+              'bootstrap_prefix_preserved': True, 'grouped_split_overlap': 0, 'source_hashes_verified': True}
     (root / 'VERIFIED.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     quality = pd.read_csv(root / 'phase1_prediction/quality_summary.csv')
     quality = quality.query("scenario in ['n_2000', 'base', 'n_12000'] and engine != 'prevalence'")
     quality = quality[['scenario', 'engine', 'roc_auc_mean', 'pr_auc_ap_mean', 'brier_mean', 'f1_test_at_valid_threshold_mean']]
     timing = pd.read_csv(root / 'phase2_parallel/timing_summary.csv')
-    timing = timing[['engine', 'mode', 'seconds_median', 'process_seconds_median', 'speedup', 'process_speedup', 'rss_mib_max']]
+    timing = timing[['engine', 'mode', 'seconds_median', 'seconds_q25', 'seconds_q75', 'process_seconds_median', 'speedup', 'process_speedup', 'rss_mib_max']]
     supplement = sensitivity.groupby(['split', 'model'])[['roc_auc','pr_auc_ap','brier','f1_test_at_valid_threshold']].mean().reset_index()
     report = '# Windows 实跑结果\n\n'
     report += '本页由 scripts/verify_windows.py 从原始结果复算生成。验证详情见 VERIFIED.json；原 macOS 结果单独保留。\n\n'
@@ -90,7 +95,7 @@ def verify(directory):
     report += f'测试：{len(cases)-skipped} 通过、{skipped} 跳过（POSIX 用例）。B=40 的前 20 份抽样和模型种子与 B=20 完全相同。分组划分的训练、验证、测试之间没有重复特征组交叉。\n\n'
     report += '## 阶段一：自然比例预测指标\n\n' + markdown_table(quality) + '\n\n'
     report += '## 阶段二：计时与内存\n\n' + markdown_table(timing) + '\n\n'
-    report += '时间单位为秒；内存为 MiB。speedup 使用核心时间，process_speedup 使用完整进程时间。两者都与同一引擎的串行中位数比较。\n\n'
+    report += '时间单位为秒；内存为 MiB。speedup 使用核心时间，process_speedup 使用完整进程时间。两者都与同一引擎的串行中位数比较。部分串行计时波动较大，必须同时看 q25/q75 和 timings.csv 的五次记录；中位数排序不构成显著性或稳定排名结论。\n\n'
     report += '## 补充对照：三个划分种子的均值\n\n' + markdown_table(supplement) + '\n\n'
     report += '该对照不使用外层 Bootstrap。分组划分也改变了测试集，不能将两种划分的指标差异全部归因于重复记录；3 个种子只提供描述性敏感性检查。详细标准差、逐次预测与划分在 sensitivity/。\n\n'
     report += '## 校准与规模变化\n\n阶段一可靠性曲线：\n\n![Calibration](phase1_prediction/figures/calibration.png)\n\n'

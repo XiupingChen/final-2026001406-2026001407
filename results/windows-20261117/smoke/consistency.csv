@@ -1,0 +1,9 @@
+scenario,engine,mode,repeat,max_absolute_error,passed
+base,sklearn,outer,0,0.0,True
+base,sklearn,hybrid,0,0.0,True
+base,sklearn,inner,0,3.3306690738754696e-16,True
+base,sklearn,serial,0,0.0,True
+base,ranger,inner,0,0.0,True
+base,ranger,hybrid,0,0.0,True
+base,ranger,outer,0,0.0,True
+base,ranger,serial,0,0.0,True

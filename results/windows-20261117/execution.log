@@ -1,0 +1,230 @@
+C:\Users\HeYunqi\Documents\Codex\2026-11-17\https-github-com-xiupingchen-final-2026001406\work\windows-repo\creditbench\clean.py:25: Pandas4Warning: The xlrd engine is deprecated and will be removed in a future version. Use the calamine engine instead, by setting engine='calamine'.
+  raw = pd.read_excel(input_path, sheet_name="Data", header=1, engine="xlrd")
+Cleaned 30000 rows: C:\Users\HeYunqi\Documents\Codex\2026-11-17\https-github-com-xiupingchen-final-2026001406\work\windows-repo\data\cleaned\cleaned.csv
+Default rate: 22.1200%; EDUCATION recodes: 345; MARRIAGE recodes: 54
+.................s....                                                   [100%]
+============================== warnings summary ===============================
+tests/test_clean_and_stages.py::ProjectChecks::test_source_and_cleaning_decisions
+  C:\Users\HeYunqi\Documents\Codex\2026-11-17\https-github-com-xiupingchen-final-2026001406\work\windows-repo\creditbench\clean.py:25: Pandas4Warning: The xlrd engine is deprecated and will be removed in a future version. Use the calamine engine instead, by setting engine='calamine'.
+    raw = pd.read_excel(input_path, sheet_name="Data", header=1, engine="xlrd")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] tests\test_correctness.py:114: POSIX process-group regression
+21 passed, 1 skipped, 1 warning in 20.19s
+Prepared 30000 rows, 29 encoded columns; split: {'train': 18000, 'validation': 6000, 'test': 6000}
+[1/8] base__sklearn__outer__r0
+[2/8] base__ranger__inner__r0
+[3/8] base__sklearn__hybrid__r0
+[4/8] base__ranger__hybrid__r0
+[5/8] base__sklearn__inner__r0
+[6/8] base__sklearn__serial__r0
+[7/8] base__ranger__outer__r0
+[8/8] base__ranger__serial__r0
+Prepared 30000 rows, 29 encoded columns; split: {'train': 18000, 'validation': 6000, 'test': 6000}
+[1/12] rate_010__ranger__serial__r0
+[2/12] rate_050__ranger__serial__r0
+[3/12] rate_030__ranger__serial__r0
+[4/12] rate_050__sklearn__serial__r0
+[5/12] n_2000__sklearn__serial__r0
+[6/12] base__ranger__serial__r0
+[7/12] n_12000__ranger__serial__r0
+[8/12] n_2000__ranger__serial__r0
+[9/12] rate_010__sklearn__serial__r0
+[10/12] base__sklearn__serial__r0
+[11/12] rate_030__sklearn__serial__r0
+[12/12] n_12000__sklearn__serial__r0
+Prepared 30000 rows, 29 encoded columns; split: {'train': 18000, 'validation': 6000, 'test': 6000}
+[1/40] base__sklearn__outer__r1
+[2/40] base__sklearn__serial__r4
+[3/40] base__sklearn__outer__r4
+[4/40] base__sklearn__inner__r2
+[5/40] base__sklearn__inner__r0
+[6/40] base__ranger__hybrid__r0
+[7/40] base__ranger__hybrid__r2
+[8/40] base__sklearn__hybrid__r4
+[9/40] base__sklearn__inner__r1
+[10/40] base__ranger__hybrid__r4
+[11/40] base__sklearn__outer__r2
+[12/40] base__ranger__outer__r4
+[13/40] base__ranger__inner__r0
+[14/40] base__sklearn__serial__r1
+[15/40] base__ranger__serial__r2
+[16/40] base__sklearn__hybrid__r1
+[17/40] base__ranger__serial__r0
+[18/40] base__sklearn__serial__r0
+[19/40] base__ranger__outer__r3
+[20/40] base__sklearn__outer__r3
+[21/40] base__ranger__hybrid__r3
+[22/40] base__ranger__outer__r0
+[23/40] base__sklearn__serial__r3
+[24/40] base__ranger__inner__r4
+[25/40] base__sklearn__hybrid__r2
+[26/40] base__ranger__serial__r1
+[27/40] base__ranger__inner__r3
+[28/40] base__sklearn__hybrid__r3
+[29/40] base__ranger__outer__r1
+[30/40] base__ranger__hybrid__r1
+[31/40] base__ranger__serial__r3
+[32/40] base__sklearn__outer__r0
+[33/40] base__sklearn__hybrid__r0
+[34/40] base__sklearn__serial__r2
+[35/40] base__ranger__inner__r1
+[36/40] base__ranger__inner__r2
+[37/40] base__sklearn__inner__r4
+[38/40] base__ranger__outer__r2
+[39/40] base__sklearn__inner__r3
+[40/40] base__ranger__serial__r4
+Prepared 30000 rows, 29 encoded columns; split: {'train': 18000, 'validation': 6000, 'test': 6000}
+[1/120] B_40__ranger__hybrid__r2
+[2/120] base__sklearn__inner__r0
+[3/120] base__sklearn__serial__r1
+[4/120] base__ranger__hybrid__r1
+[5/120] T_400__sklearn__serial__r2
+[6/120] T_400__sklearn__serial__r1
+[7/120] T_400__sklearn__inner__r2
+[8/120] n_2000__ranger__inner__r1
+[9/120] n_2000__sklearn__serial__r0
+[10/120] B_40__sklearn__outer__r0
+[11/120] B_40__ranger__serial__r2
+[12/120] n_12000__ranger__inner__r1
+[13/120] base__sklearn__inner__r2
+[14/120] n_12000__sklearn__hybrid__r0
+[15/120] B_40__sklearn__inner__r1
+[16/120] B_40__sklearn__outer__r2
+[17/120] n_12000__ranger__inner__r2
+[18/120] T_400__sklearn__inner__r1
+[19/120] n_12000__ranger__hybrid__r2
+[20/120] base__sklearn__hybrid__r2
+[21/120] B_40__sklearn__hybrid__r2
+[22/120] T_400__ranger__hybrid__r1
+[23/120] B_40__sklearn__inner__r0
+[24/120] base__sklearn__outer__r0
+[25/120] n_2000__ranger__inner__r0
+[26/120] n_2000__sklearn__inner__r2
+[27/120] T_400__sklearn__hybrid__r0
+[28/120] base__ranger__outer__r1
+[29/120] B_40__ranger__outer__r1
+[30/120] n_2000__sklearn__serial__r1
+[31/120] B_40__ranger__inner__r0
+[32/120] n_2000__sklearn__outer__r1
+[33/120] n_2000__sklearn__serial__r2
+[34/120] T_400__ranger__inner__r2
+[35/120] B_40__ranger__hybrid__r1
+[36/120] n_12000__sklearn__inner__r0
+[37/120] T_400__ranger__outer__r0
+[38/120] base__ranger__hybrid__r2
+[39/120] B_40__ranger__outer__r0
+[40/120] n_12000__sklearn__hybrid__r1
+[41/120] n_2000__sklearn__outer__r2
+[42/120] base__ranger__hybrid__r0
+[43/120] n_12000__ranger__outer__r1
+[44/120] B_40__sklearn__serial__r1
+[45/120] T_400__ranger__outer__r1
+[46/120] n_12000__sklearn__serial__r1
+[47/120] T_400__ranger__hybrid__r2
+[48/120] T_400__ranger__serial__r0
+[49/120] n_12000__ranger__serial__r1
+[50/120] B_40__sklearn__hybrid__r1
+[51/120] B_40__ranger__inner__r2
+[52/120] n_12000__ranger__outer__r2
+[53/120] base__ranger__outer__r0
+[54/120] base__ranger__serial__r2
+[55/120] base__sklearn__outer__r2
+[56/120] T_400__sklearn__outer__r1
+[57/120] n_2000__ranger__serial__r1
+[58/120] base__sklearn__outer__r1
+[59/120] base__ranger__outer__r2
+[60/120] B_40__sklearn__serial__r2
+[61/120] base__ranger__inner__r2
+[62/120] n_12000__sklearn__outer__r2
+[63/120] n_2000__ranger__outer__r1
+[64/120] B_40__ranger__hybrid__r0
+[65/120] B_40__ranger__serial__r1
+[66/120] n_12000__sklearn__outer__r1
+[67/120] T_400__sklearn__serial__r0
+[68/120] base__ranger__serial__r1
+[69/120] n_2000__ranger__serial__r2
+[70/120] n_12000__ranger__inner__r0
+[71/120] T_400__ranger__inner__r0
+[72/120] B_40__sklearn__outer__r1
+[73/120] n_12000__ranger__serial__r2
+[74/120] n_2000__sklearn__hybrid__r1
+[75/120] T_400__ranger__serial__r2
+[76/120] B_40__sklearn__hybrid__r0
+[77/120] B_40__ranger__inner__r1
+[78/120] n_12000__ranger__outer__r0
+[79/120] base__ranger__inner__r1
+[80/120] B_40__ranger__serial__r0
+[81/120] T_400__ranger__hybrid__r0
+[82/120] base__sklearn__inner__r1
+[83/120] n_12000__sklearn__serial__r2
+[84/120] n_2000__ranger__hybrid__r0
+[85/120] T_400__ranger__outer__r2
+[86/120] n_2000__ranger__hybrid__r1
+[87/120] base__sklearn__hybrid__r1
+[88/120] n_12000__ranger__hybrid__r1
+[89/120] base__sklearn__serial__r0
+[90/120] B_40__sklearn__serial__r0
+[91/120] n_2000__ranger__outer__r2
+[92/120] T_400__ranger__serial__r1
+[93/120] n_2000__sklearn__hybrid__r2
+[94/120] base__ranger__serial__r0
+[95/120] n_2000__ranger__inner__r2
+[96/120] n_12000__sklearn__hybrid__r2
+[97/120] T_400__sklearn__hybrid__r2
+[98/120] T_400__sklearn__outer__r2
+[99/120] n_2000__sklearn__outer__r0
+[100/120] T_400__ranger__inner__r1
+[101/120] n_2000__sklearn__hybrid__r0
+[102/120] T_400__sklearn__hybrid__r1
+[103/120] T_400__sklearn__outer__r0
+[104/120] base__sklearn__hybrid__r0
+[105/120] base__sklearn__serial__r2
+[106/120] n_2000__ranger__hybrid__r2
+[107/120] T_400__sklearn__inner__r0
+[108/120] n_2000__sklearn__inner__r0
+[109/120] n_12000__sklearn__serial__r0
+[110/120] n_12000__ranger__hybrid__r0
+[111/120] n_2000__ranger__outer__r0
+[112/120] n_12000__sklearn__outer__r0
+[113/120] n_12000__sklearn__inner__r1
+[114/120] n_12000__ranger__serial__r0
+[115/120] n_2000__sklearn__inner__r1
+[116/120] n_12000__sklearn__inner__r2
+[117/120] B_40__sklearn__inner__r2
+[118/120] B_40__ranger__outer__r2
+[119/120] base__ranger__inner__r0
+[120/120] n_2000__ranger__serial__r0
+    n engine   median      min      max      std  python_seconds  speedup_vs_python
+ 1000  NumPy 0.000939 0.000921 0.000986 0.000021        0.007528           8.013413
+ 1000 Python 0.007528 0.007408 0.009060 0.000505        0.007528           1.000000
+ 1000      R 0.026662 0.022837 0.048389 0.008012        0.007528           0.282344
+ 1000   Rcpp 0.000056 0.000055 0.000062 0.000002        0.007528         134.296310
+ 6000  NumPy 0.001778 0.001750 0.002148 0.000119        0.044804          25.202680
+ 6000 Python 0.044804 0.043626 0.049393 0.001923        0.044804           1.000000
+ 6000      R 0.145449 0.137481 0.154804 0.006655        0.044804           0.308038
+ 6000   Rcpp 0.000315 0.000312 0.000439 0.000041        0.044804         142.063594
+18000  NumPy 0.005521 0.005123 0.010194 0.001516        0.134285          24.322852
+18000 Python 0.134285 0.131257 0.143157 0.004564        0.134285           1.000000
+18000      R 0.431412 0.417600 0.463745 0.015915        0.134285           0.311269
+18000   Rcpp 0.001074 0.000935 0.001317 0.000157        0.134285         125.044422
+                roc_auc  pr_auc_ap     brier
+engine                                      
+histogram_16   0.762644   0.533124  0.138176
+histogram_32   0.761720   0.528779  0.138887
+histogram_64   0.760634   0.528250  0.138691
+sklearn_exact  0.760390   0.532388  0.138407
+Supplement: row_stratified, seed=20261111, model=logistic
+Supplement: row_stratified, seed=20261111, model=forest
+Supplement: row_stratified, seed=20261112, model=logistic
+Supplement: row_stratified, seed=20261112, model=forest
+Supplement: row_stratified, seed=20261113, model=logistic
+Supplement: row_stratified, seed=20261113, model=forest
+Supplement: grouped, seed=20261111, model=logistic
+Supplement: grouped, seed=20261111, model=forest
+Supplement: grouped, seed=20261112, model=logistic
+Supplement: grouped, seed=20261112, model=forest
+Supplement: grouped, seed=20261113, model=logistic
+Supplement: grouped, seed=20261113, model=forest
+Windows experiments completed: results/windows-20261117

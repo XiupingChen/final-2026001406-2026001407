@@ -1,0 +1,20 @@
+{
+  "seeds": [
+    20261111,
+    20261112,
+    20261113
+  ],
+  "n": 6000,
+  "forest": {
+    "trees": 200,
+    "max_depth": 16,
+    "min_leaf": 5
+  },
+  "logistic": {
+    "C": 1.0,
+    "max_iter": 3000
+  },
+  "group_definition": "exact cleaned predictors (labels excluded)",
+  "scope": "Matched models, no outer bootstrap; 3 split seeds are descriptive, not a confidence interval.",
+  "data_sha256": "a970e2cb5113ada8dd37aad2c1756b462cffa64a42a7223ebc71f21be39a856b"
+}
