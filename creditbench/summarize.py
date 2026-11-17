@@ -30,6 +30,9 @@ def summarize(output):
     summary = summary.merge(serial, on=["scenario", "engine"], validate="many_to_one")
     summary["speedup"] = summary.serial_seconds / summary.seconds_median
     summary["efficiency"] = summary.speedup / summary.cpu_slots
+    process_serial = summary[summary["mode"] == "serial"][["scenario", "engine", "process_seconds_median"]].rename(columns={"process_seconds_median": "serial_process_seconds"})
+    summary = summary.merge(process_serial, on=["scenario", "engine"], validate="many_to_one")
+    summary["process_speedup"] = summary.serial_process_seconds / summary.process_seconds_median
     summary.to_csv(output / "timing_summary.csv", index=False)
     # A paired ratio per timing repeat is also retained; ratio-of-medians is the figure convention.
     paired = timing.merge(timing[timing["mode"] == "serial"][["scenario", "engine", "repeat", "core_seconds"]],

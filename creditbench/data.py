@@ -107,13 +107,22 @@ def prepare(config, directory, cleaned_csv=None):
         # All engines/schedules read exactly these bootstrap draws, not their own RNG draws.
         rng = np.random.default_rng(config["seed"]+3)
         boot = rng.integers(0, len(ids), size=(b, len(ids)))
-        seeds = rng.integers(1, 2**30, size=b)
+        # Independent stream: increasing B retains both draws AND model seeds.
+        seeds = np.random.default_rng(config["seed"]+4).integers(1, 2**30, size=b)
         np.savetxt(sdir / "bootstrap.csv", boot, fmt="%d", delimiter=",")
         np.savetxt(sdir / "seeds.csv", seeds, fmt="%d")
         scenario.update(bootstrap=b, trees=item.get("trees", config["model"]["trees"]),
                         observed_rate=float(y[ids].mean()), directory=str(sdir.resolve()))
         scenarios.append(scenario)
+    groups = df.groupby(list(df.columns), dropna=False).ngroup().to_numpy()
+    group_splits = pd.DataFrame({"group": groups, "partition": split}).groupby("group").partition.nunique()
+    duplicate_audit = {"group_definition": "identical cleaned predictors, excluding ID and target",
+                       "groups_crossing_partitions": int((group_splits > 1).sum()),
+                       "test_rows_matching_training_pool": int(np.isin(groups[test], groups[train]).sum()),
+                       "decision": "Preserved for comparability; grouped-split sensitivity is run separately."}
     metadata = {"source": source, "n": len(y), "p": x.shape[1], "features": names,
+                "random_streams": {"bootstrap": config["seed"]+3, "model_seeds": config["seed"]+4},
+                "duplicate_audit": duplicate_audit,
                 "split_sizes": {k: int(np.sum(split == k)) for k in ("train", "validation", "test")},
                 "split_default_rates": {k: float(y[split == k].mean()) for k in ("train", "validation", "test")},
                 "preprocessing": processing, "scenarios": scenarios,

@@ -71,6 +71,9 @@ def clean(input_path, output_dir):
         "predictors_before": len(FEATURES), "predictors_after": len(FEATURES),
         "target_counts": {str(k): int(v) for k, v in raw[TARGET].value_counts().sort_index().items()},
         "missing_values": int(raw.isna().sum().sum()), "duplicate_ids": int(raw.ID.duplicated().sum()),
+        "duplicate_raw_rows_excluding_id": int(raw.drop(columns="ID").duplicated().sum()),
+        "duplicate_cleaned_rows": int(clean_df.duplicated().sum()),
+        "duplicate_cleaned_predictors": int(clean_df[FEATURES].duplicated().sum()),
         "education_before": {str(k): int(v) for k, v in education_before.items()},
         "education_after": {str(k): int(v) for k, v in clean_df.EDUCATION.value_counts().sort_index().items()},
         "marriage_before": {str(k): int(v) for k, v in marriage_before.items()},
@@ -83,6 +86,7 @@ def clean(input_path, output_dir):
                       "EDUCATION 0/5/6 -> 4 (other); MARRIAGE 0 -> 3 (other).",
                       "Keep negative PAY_* statuses and negative BILL_AMT* values.",
                       "No rows removed, no missing-value imputation needed for supplied XLS.",
+                      "Repeated predictor profiles may be distinct customers; retained and audited, with grouped-split sensitivity.",
                       "No encoding or fitting on validation/test; training-only encoding occurs in prepare."],
     }
     dump_json(output_dir / "audit.json", audit)

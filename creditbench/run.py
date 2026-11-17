@@ -32,12 +32,15 @@ def monitored_run(command, log):
     with open(log, "w", encoding="utf-8") as stream:
         process = subprocess.Popen(command, cwd=ROOT, env=child_env(), stdout=stream,
                                    stderr=subprocess.STDOUT, start_new_session=(os.name != "nt"))
-        root = psutil.Process(process.pid)
+        try:
+            root = psutil.Process(process.pid)
+        except psutil.NoSuchProcess:
+            root = None
         while process.poll() is None:
             rss = 0
             try:
                 if os.name == "nt":
-                    measured = [root] + root.children(recursive=True)
+                    measured = [] if root is None else [root] + root.children(recursive=True)
                 else:
                     measured = []
                     for candidate in psutil.process_iter(["pid"]):
@@ -46,6 +49,10 @@ def monitored_run(command, log):
                                 measured.append(candidate)
                         except (OSError, psutil.Error):
                             pass
+            except psutil.NoSuchProcess:
+                # A successful worker can exit between poll() and children().
+                # Reap it below and use its exit code; this is not an RSS failure.
+                measured = []
             except (OSError, psutil.Error) as exc:
                 sampling_error = exc
                 measured = []
@@ -196,10 +203,10 @@ def experiment(config_path, output, prepared_source, rscript=None, engines=None)
     pd.DataFrame(consistency).to_csv(output / "consistency.csv", index=False)
     if not all(c["passed"] for c in consistency):
         raise AssertionError("Scheduling changed predictions; inspect consistency.csv before interpreting speedups")
-    dump_json(output / "COMPLETE.json", {"completed_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
-                                         "jobs": len(jobs), "max_schedule_error": max(c["max_absolute_error"] for c in consistency)})
     from .summarize import summarize
     summarize(output)
+    dump_json(output / "COMPLETE.json", {"completed_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+                                         "jobs": len(jobs), "max_schedule_error": max(c["max_absolute_error"] for c in consistency)})
     return output
 
 
