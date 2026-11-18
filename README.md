@@ -319,7 +319,7 @@ Ma, W.《数据科学中的计算机技能》，`rparallel-basics.md`，
 
 ## 10. AI 使用说明
 
-本项目使用了 ChatGPT/Codex，参与讨论实验结构、检查和修复代码、配置环境、执行实验、核查结果，以及整理 README 和报告文字。数据选择、实验问题、参数设置和结果解释由小组成员结合课程要求确定；所有正式数值均来自本仓库脚本在 macOS 与 Windows 两台电脑上真实运行生成的结果文件，而不是由 AI 推测或编造。Windows 版本中执行的修改和运行范围见 [WINDOWS_REPRODUCTION.md](WINDOWS_REPRODUCTION.md)。
+本项目使用了 ChatGPT/Codex，参与讨论实验结构、检查和修复代码、配置环境、执行实验、核查结果，以及整理 README 和报告文字。数据选择、实验问题、参数设置和结果解释由小组成员结合课程要求确定；所有正式数值均来自本仓库脚本在 macOS 与 Windows 两台电脑上真实运行生成的结果文件，而不是由 AI 推测或编造。Windows 版本的技术变更与复现过程见 [WINDOWS_REPRODUCTION.md](WINDOWS_REPRODUCTION.md)。
 
 我们通过单元测试、穷举参考实现、跨语言比较、不同调度下的逐样本预测一致性、`COMPLETE.json` 任务数、原始 CSV 与汇总表复算等方式核查 AI 辅助内容。小组成员对最终提交内容负责，并能够说明核心代码、实验设置和结果含义。
 
